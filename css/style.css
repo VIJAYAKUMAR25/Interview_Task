@@ -1,0 +1,243 @@
+/* Reset & Base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e3b56; /* Dark blue background from design */
+    color: #333;
+}
+
+.delphian-section {
+    background-color: #1e3b56;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .delphian-section {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+.header-text h2 {
+    color: #ffffff;
+    font-weight: 300;
+}
+.header-text p {
+    color: #a0b2c0;
+}
+
+/* Container */
+.main-container {
+    max-width: 1100px;
+}
+
+/* Tabs Column */
+.col-tabs {
+    background-color: #f8f9fa; /* Light grey/white so the pure white cards pop out */
+    padding: 20px 0;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    background: #ffffff;
+    border: none;
+    transition: all 0.3s;
+    position: relative;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.tab-item img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.tab-item.active {
+    background-color: #ffffff !important;
+    color: #333 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+/* The arrow pointing left from col 2 to active tab */
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 15px 10px 15px 0;
+    border-style: solid;
+    border-color: transparent #70b8c8 transparent transparent;
+    z-index: 10;
+}
+
+/* Content Column */
+.col-content {
+    background-color: #70b8c8; /* Light blue from design */
+}
+
+.slider-content {
+    text-align: center;
+}
+
+.slider-content .category {
+    background: rgba(0, 0, 0, 0.15); /* Black shaded opacity */
+    padding: 5px 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.slider-content h3 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.learn-more {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.learn-more:hover {
+    color: #e0e0e0;
+}
+
+.slider-dots .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    margin: 0 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.slider-dots .dot.active {
+    background: rgba(255,255,255,0.6);
+}
+
+/* Image Column */
+.col-image {
+    min-height: 400px; /* To maintain 1:1 aspect ratio approximately depending on content */
+}
+
+.image-wrapper {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Mobile Accordion overrides */
+.mobile-view .accordion {
+    background: transparent;
+}
+.mobile-view .accordion-item {
+    background: transparent;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.mobile-view .accordion-button {
+    font-weight: 500;
+    background-color: #ffffff;
+    border-radius: 5px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.mobile-view .accordion-button img {
+    width: 24px;
+    margin-right: 15px;
+}
+
+.mobile-view .accordion-button:not(.collapsed) {
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+}
+
+/* Mobile up arrow */
+.mobile-view .accordion-button:not(.collapsed)::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 15px 15px 15px;
+    border-style: solid;
+    border-color: transparent transparent #70b8c8 transparent;
+    z-index: 10;
+}
+
+/* Custom Plus/Minus Icons for Accordion */
+.mobile-view .accordion-button::after {
+    background-image: url('../files/images/plus-01.svg') !important;
+    transform: none !important;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+}
+
+.mobile-view .accordion-button:not(.collapsed)::after {
+    background-image: url('../files/images/minus-01.svg') !important;
+    transform: none !important;
+}
+
+.mobile-content-wrapper {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 40px 20px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Dark overlay for mobile background text readability */
+.mobile-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(112, 184, 200, 0.85); /* Light blue overlay */
+    z-index: 1;
+}
+
+.mobile-content-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.mobile-content-inner .category {
+    background: rgba(0, 0, 0, 0.15); /* Black shaded opacity */
+    padding: 5px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.mobile-content-inner h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
